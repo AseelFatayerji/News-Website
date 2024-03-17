@@ -1,11 +1,16 @@
-window.onload = () => {
-  let news = $.get("../../Backend/Display.php", function () {
-    alert("success");
-  })
-    .fail(function () {
-      alert("error");
-    })
-    .always(function () {
-      alert("finished");
+$(document).ready(function() {
+
+    $("#display").click(function() {
+
+      $.ajax({    //create an ajax request to display.php
+        type: "GET",
+        url: "../Backend/Display.php",
+        dataType: "html",   //expect html to be returned
+        success: function(response){
+            $("#news").html(response);
+            //alert(response);
+        }
+
     });
-};
+});
+});
