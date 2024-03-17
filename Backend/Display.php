@@ -6,7 +6,6 @@ $result = mysqli_query($mysqli, $readSql);
 $news = [];
 while ($row = mysqli_fetch_assoc($result)) {
     $item = array(
-        'id' => $row['id'],
         'title' => $row['title'],
         'content' => $row['content'],
         'author' => $row['author'],

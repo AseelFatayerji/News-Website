@@ -1,16 +1,29 @@
-$(document).ready(function() {
-
-    $("#display").click(function() {
-
-      $.ajax({    //create an ajax request to display.php
-        type: "GET",
-        url: "../Backend/Display.php",
-        dataType: "html",   //expect html to be returned
-        success: function(response){
-            $("#news").html(response);
-            //alert(response);
-        }
-
+jQuery(document).ready(function ($) {
+  fetchNews();
+  function fetchNews() {
+    $.ajax({
+      url: "http://localhost/fullstack/News%20Website/Backend/Display.php",
+      type: "GET",
+      dataType: "json",
+      success: function (news) {
+        $("#news").empty();
+        $.each(news, function (index, value) {
+          $("#news").append(
+            '<div class = "card"><img src="' +
+              value["img"] +
+              '"/> <div class="card-header">' +
+              value["title"] +
+              '</div><div class="card-body"><p>' +
+              value["content"] +
+              '</p></div><div class="right"><h6>' +
+              value["author"] +
+              '</h6></div> </div>'
+          );
+        });
+      },
+      error: function (error) {
+        console.error("Error fetching news:", error);
+      },
     });
-});
+  }
 });

@@ -30,7 +30,7 @@ nav ul {
 nav ul li {
   padding: 10px;
 }
-footer ul li{
+footer ul li {
   display: flex;
   justify-content: space-between;
 }
@@ -55,8 +55,8 @@ input {
   border-color: var(--main);
   border-radius: 8px;
 }
-input[type="submit"]:hover{
-    filter: brightness(90%);
+input[type="submit"]:hover {
+  filter: brightness(90%);
 }
 
 textarea {
@@ -67,7 +67,11 @@ textarea {
   border-radius: 8px;
   border-color: var(--main);
 }
-
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
 footer {
   font-size: 20px;
   font-weight: bold;
@@ -82,7 +86,9 @@ footer {
   margin-top: 5%;
   margin-left: 35%;
 }
-
+.news {
+  margin-top: 5%;
+}
 .form {
   width: fit-content;
   height: fit-content;
@@ -93,12 +99,24 @@ footer {
   align-self: center;
   text-align: center;
 }
-.card-header{
-    font-size: 26px;
-    font-weight: bolder;
-    background-color: var(--main);
-    border-radius: 8px 8px 0px 0px;
-    padding: 20px;
+.cards {
+  align-content: center;
+  padding: 20px;
+}
+.card {
+  width: 35%;
+}
+.card-header {
+  width: fit-content;
+  font-size: 26px;
+  font-weight: bolder;
+  border-radius: 8px 8px 0px 0px;
+  padding: 20px;
+}
+.card-body {
+  width: fit-content;
+  font-size: 20px;
+  padding: 20px;
 }
 .selected {
   background: rgb(247, 187, 160);
@@ -109,6 +127,9 @@ footer {
     rgba(247, 187, 160, 1) 88%,
     rgba(97, 175, 189, 0) 88%
   );
+}
+.main-bg{
+  background-color: var(--main);
 }
 .float-container {
   display: flex;
@@ -124,4 +145,8 @@ footer {
 }
 .gap {
   gap: 20px;
+}
+.right {
+  align-content: end;
+  text-align: end;
 }
