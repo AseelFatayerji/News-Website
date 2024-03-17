@@ -9,7 +9,7 @@ jQuery(document).ready(function ($) {
         $("#news").empty();
         $.each(news, function (index, value) {
           $("#news").append(
-            '<div class = "card"><img class="article-img" src="' +
+            '<div class = "card"><img class="article-img" src="/Assets/' +
               value["img"] +
               '"/> <div class="card-header">' +
               value["title"] +
