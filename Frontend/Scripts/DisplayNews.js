@@ -8,8 +8,9 @@ jQuery(document).ready(function ($) {
       success: function (news) {
         $("#news").empty();
         $.each(news, function (index, value) {
+          console.log(value["img"]);
           $("#news").append(
-            '<div class = "card"><img class="article-img" src="/Assets/' +
+            '<div class = "card"><img class="article-img" src="' +
               value["img"] +
               '"/> <div class="card-header">' +
               value["title"] +
